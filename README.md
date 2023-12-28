@@ -14,15 +14,18 @@ Before getting started, make sure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/online-ide-python.git
+   https://github.com/Bhavye2003Developer/node-ide.git
+
 2. **Navigate to the project directory:**
 
    ```bash
    cd node-ide
+
 3. **Install dependencies:**
 
    ```bash
    npm install
+
 4. **Build the Docker image:**
 
    ```bash
