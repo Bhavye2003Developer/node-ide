@@ -30,10 +30,9 @@ async function initDockerImage() {
 
 async function runCode(containerId, fileNmae) {
     // copy file to docker container and get it's output
-    const command = `docker cp code/${fileNmae} ${containerId}:/code && docker exec ${containerId} python3 ${fileNmae}`
+    const command = `docker cp code/${fileNmae} ${containerId}:/code && docker exec ${containerId} /bin/bash -c "python3 ${fileNmae} 2>&1 | tee output.txt"`
     return executeCommand(command)
 }
-
 
 /**
  * @param {string} command

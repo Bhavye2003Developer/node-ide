@@ -20,12 +20,14 @@ app.get("/", (req, res) => {
     })
 })
 
+
 app.get("/playground", (req, res) => {
     const containerId = req.query.id
     const output = req.query.output
     console.log(req.query)
     res.render("playground", { containerId, output })
 })
+
 
 app.post("/playground", (req, res) => {
     const userCode = req.body.code
