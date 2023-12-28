@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="todo" id="todo" placeholder="what you have to do today"><br><br>
+    <input type="text" name="time" id="time" placeholder="timeframe to do work"><br><br><br>
+    <input type="button" value="Add todo" id="done">
+
+    <div id="todos">
+
+    </div>
+
+    <script>
+        const todoEle = document.getElementById("todo")
+        const timeEle = document.getElementById("time")
+        const allTodos = document.getElementById("todos")
+
+        document.getElementById("done").addEventListener("click", (e) => {
+            const todo = todoEle.value
+            const time = timeEle.value
+
+            const todoDiv = document.createElement("div")
+            const todoP = document.createElement("p").textContent = todo
+            const timeP = document.createElement("p").textContent = time
+            const doneButton = document.createElement("button")
+            doneButton.innerText = "Mark as done"
+
+            doneButton.addEventListener("click", (e) => {
+                doneButton.innerText = "Done"
+                console.log("clicked")
+                // doneButton.style.backgroundColor = "green"
+            })
+
+            todoDiv.append(todoP)
+            todoDiv.append(document.createElement("br"))
+            todoDiv.append(timeP)
+            todoDiv.append(document.createElement("br"))
+            todoDiv.append(doneButton)
+
+            todoDiv.innerHTML += "<br><br>"
+
+
+            allTodos.appendChild(todoDiv)
+
+        })
+    </script>
+</body>
+
+</html>

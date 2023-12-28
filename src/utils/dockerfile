@@ -1,0 +1,16 @@
+FROM ubuntu
+WORKDIR /code
+RUN apt-get update && apt-get upgrade
+RUN apt-get install python3 -y
+RUN apt-get install g++ -y
+CMD [ "/bin/bash" ]
+EXPOSE 3000
+
+
+
+# on startup
+# docker run -dp 127.0.0.1:3000:3000 code-runner -> to run bash 
+
+
+# on each submit button, on another terminal
+# docker cp code/main.py b32c8f808709:/code
