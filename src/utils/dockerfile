@@ -1,8 +1,9 @@
-FROM ubuntu
+FROM ubuntu:latest
 WORKDIR /code
 RUN apt-get update && apt-get upgrade
 RUN apt-get install python3 -y
 RUN apt-get install g++ -y
+RUN apt install default-jre -y
 CMD [ "/bin/bash" ]
 EXPOSE 3000
 

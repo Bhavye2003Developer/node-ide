@@ -35,7 +35,7 @@ app.post("/playground", (req, res) => {
 
     utils.writeToFile(userCode, "./code/main.py").then(() => {
 
-        utils.runCode(containerId, "main.py").then(output => {
+        utils.runPythonCode(containerId, "main.py").then(output => {
             utils.writeToFile(output, "./output/output.txt")
             return res.redirect(`/playground?id=${containerId}&output=${output}`)
         })
